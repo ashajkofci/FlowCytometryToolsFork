@@ -9,7 +9,7 @@ import six
 
 
 def get_tag_value(string, pre, post, tagtype=float, greedy=True):
-    """
+    r"""
     Extracts the value of a tag from a string.
 
     Parameters
