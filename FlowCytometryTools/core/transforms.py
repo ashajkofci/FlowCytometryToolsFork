@@ -33,8 +33,8 @@ from numpy import (
     asarray,
     errstate,
     maximum,
+    apply_along_axis,
 )
-from numpy.lib.shape_base import apply_along_axis
 from scipy.interpolate import InterpolatedUnivariateSpline
 from scipy.optimize import brentq
 

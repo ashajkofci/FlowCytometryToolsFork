@@ -45,7 +45,7 @@ setup(
         "pandas>=2.1",
         "matplotlib>=3.8",
         "decorator",
-        "fcsparser>=0.1.4",
+    "fcsparser @ git+https://github.com/ashajkofci/fcsparser.git@c6655fd8199ad8e7ee09cfe72047efd9d35a9b37",
     ],
     classifiers=[
         "Intended Audience :: Science/Research",

@@ -4,4 +4,4 @@ numpy>=1.26
 scipy>=1.12
 matplotlib>=3.8
 pandas>=2.1
-fcsparser>=0.2.4
+fcsparser @ git+https://github.com/ashajkofci/fcsparser.git@c6655fd8199ad8e7ee09cfe72047efd9d35a9b37

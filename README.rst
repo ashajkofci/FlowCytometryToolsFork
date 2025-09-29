@@ -84,7 +84,7 @@ versions of :code:`pip` (>= 23) or other PEP 517 installers can build it directl
 #. `pandas <https://pandas.pydata.org/>`__ (Recommended version: 2.1 or higher)
 #. `matplotlib <https://matplotlib.org/>`__ (Recommended version: 3.8 or higher)
 #. `scipy <https://www.scipy.org/>`__ (Recommended version: 1.12 or higher)
-#. `fcsparser <https://github.com/eyurtsev/fcsparser>`__ (Recommended version: 0.2.4 or higher)
+#. `fcsparser <https://github.com/ashajkofci/fcsparser>`__ (FlowCytometryTools vendor fork with NumPy 2 support)
 
 **Optional Dependencies**
 
@@ -111,6 +111,7 @@ v0.6.0, 2025-09-29
 
 + Official support for Python 3.12 and 3.13, refreshed dependency minimums, and ``pyproject.toml`` build configuration
 + Continuous integration on GitHub Actions across CPython 3.9-3.13
++ Switched to the ``ashajkofci/fcsparser`` fork to enable NumPy 2.x compatibility
 + Updated documentation
 
 v0.4.6, 2017-03-26

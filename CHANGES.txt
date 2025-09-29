@@ -4,6 +4,7 @@ v0.6.0, 2025-09-29
 + Refresh dependency minimums for numpy, scipy, pandas, matplotlib and fcsparser
 + Replace deprecated ``inspect.getargspec`` usage with ``inspect.getfullargspec`` for compatibility with Python 3.12
 + Add GitHub Actions continuous integration for CPython 3.9-3.13
++ Depend on the ``ashajkofci/fcsparser`` fork to support NumPy 2.x byte-order handling
 
 v0.5.0, 2018-02-17
 

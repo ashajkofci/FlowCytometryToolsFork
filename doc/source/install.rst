@@ -9,7 +9,7 @@ the scientific Python stack. The minimum tested versions for Python 3.12 are:
 `pandas (>=2.1) <https://github.com/pandas-dev/pandas>`__,
 `scipy (>=1.12) <https://www.scipy.org/>`__,
 `matplotlib (>=3.8) <https://matplotlib.org/>`__ and
-`fcsparser (>=0.2.4) <https://github.com/eyurtsev/fcsparser>`__.
+`fcsparser (FlowCytometryTools fork) <https://github.com/ashajkofci/fcsparser>`__.
 
 #. Creating an isolated environment such as `conda <https://www.anaconda.com/download/>`_
     or `venv <https://docs.python.org/3/library/venv.html>`_ is recommended before
@@ -28,7 +28,11 @@ the scientific Python stack. The minimum tested versions for Python 3.12 are:
 
     .. code-block:: bash
 
-         pip install -e .
+        pip install -e .
+
+    When installing from source, pip will automatically fetch the ``ashajkofci/fcsparser``
+    fork to ensure compatibility with NumPy 2.x. If you maintain your own environment,
+    make sure no older ``fcsparser`` release that depends on ``numpy<2`` is pinned.
 
 (Note: Please do not use ``sudo`` when installing with pip. Instead figure out
 how to use virtual environments or conda.)
