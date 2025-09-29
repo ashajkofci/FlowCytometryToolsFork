@@ -109,7 +109,8 @@ Changes
 
 v0.6.0, 2025-09-29
 
-+ Official support for Python 3.12, refreshed dependency minimums, and ``pyproject.toml`` build configuration
++ Official support for Python 3.12 and 3.13, refreshed dependency minimums, and ``pyproject.toml`` build configuration
++ Continuous integration on GitHub Actions across CPython 3.9-3.13
 + Updated documentation
 
 v0.4.6, 2017-03-26
