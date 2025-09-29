@@ -672,7 +672,9 @@ class FCOrderedCollection(OrderedCollection, FCCollection):
         # be sent to grid_plot instead of two sample.plot
         # (May not be a robust solution, we'll see as the code evolves
 
-        grid_arg_list = inspect.getargspec(OrderedCollection.grid_plot).args
+        grid_arg_list = inspect.getfullargspec(OrderedCollection.grid_plot).args
+        if grid_arg_list and grid_arg_list[0] == "self":
+            grid_arg_list = grid_arg_list[1:]
 
         grid_plot_kwargs = {
             "ids": ids,

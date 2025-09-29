@@ -1,7 +1,8 @@
 FlowCytometryTools
 -------------------
 
-**Authors**: Jonathan Friedman and `Eugene Yurtsev <https://eyurtsev.github.io>`_
+**Authors**: Jonathan Friedman, `Eugene Yurtsev <https://eyurtsev.github.io>`, Adrian Shajkofci
+
 
 .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.32991.svg
     :target: https://zenodo.org/record/32991   
@@ -63,12 +64,27 @@ For more information about how to obtain these, please see the `installation
 FlowCytometryTools may work with older versions of some of these dependencies, but if
 you run into issues, please update the dependencies.
 
+To install the released package from PyPI:
+
+.. code-block:: bash
+
+  pip install flowcytometrytools
+
+For local development the project now provides a :code:`pyproject.toml`, so modern
+versions of :code:`pip` (>= 23) or other PEP 517 installers can build it directly:
+
+.. code-block:: bash
+
+  pip install -e .
+
 **Required Dependencies**
 
-#. `python <https://www.python.org/getit/>`_ python 3.7 or higher
-#. `pandas <https://pandas.pydata.org/>`__ (Recommended version: 0.19.0 or higher).
-#. `matplotlib <https://matplotlib.org/>`__ (Recommended version: 1.5.3 or higher).
-#. `scipy <https://www.scipy.org/>`__ 
+#. `python <https://www.python.org/getit/>`_ python 3.9 or higher
+#. `numpy <https://numpy.org/>`__ (Recommended version: 1.26 or higher)
+#. `pandas <https://pandas.pydata.org/>`__ (Recommended version: 2.1 or higher)
+#. `matplotlib <https://matplotlib.org/>`__ (Recommended version: 3.8 or higher)
+#. `scipy <https://www.scipy.org/>`__ (Recommended version: 1.12 or higher)
+#. `fcsparser <https://github.com/eyurtsev/fcsparser>`__ (Recommended version: 0.2.4 or higher)
 
 **Optional Dependencies**
 
@@ -90,6 +106,11 @@ So if you find that FlowCytometryTools does not suit your needs, take a look at 
 
 Changes
 =====================
+
+v0.6.0, 2025-09-29
+
++ Official support for Python 3.12, refreshed dependency minimums, and ``pyproject.toml`` build configuration
++ Updated documentation
 
 v0.4.6, 2017-03-26
 

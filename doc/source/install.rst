@@ -3,9 +3,17 @@
 How to install?
 ----------------
 
-FlowCytometryTools is a python package written in `python 2.7 <https://www.python.org/getit/>`__. FlowCytometryTools depends on a few scientific and data analysis libraries:  `matplotlib (>1.13.1) <https://matplotlib.org/>`__, `pandas (>0.12.0) <https://github.com/pandas-dev/pandas>`__, `scipy <https://www.scipy.org/>`__). 
+FlowCytometryTools targets `Python 3.9+ <https://www.python.org/getit/>`__ and depends on
+the scientific Python stack. The minimum tested versions for Python 3.12 are:
+`numpy (>=1.26) <https://numpy.org/>`__,
+`pandas (>=2.1) <https://github.com/pandas-dev/pandas>`__,
+`scipy (>=1.12) <https://www.scipy.org/>`__,
+`matplotlib (>=3.8) <https://matplotlib.org/>`__ and
+`fcsparser (>=0.2.4) <https://github.com/eyurtsev/fcsparser>`__.
 
-#. The simplest way of installing all the required dependencies is by install either `canopy <https://www.enthought.com/product/canopy/>`_ or `anaconda <https://www.anaconda.com/download/>`_.
+#. Creating an isolated environment such as `conda <https://www.anaconda.com/download/>`_
+    or `venv <https://docs.python.org/3/library/venv.html>`_ is recommended before
+    installing the dependencies.
 
 #. Optional: if you intend to use the FlowCytometryTools GUI for drawing gates you'll also need to install `wx-python <https://wiki.wxpython.org/How%20to%20install%20wxPython>`_.
 
@@ -15,7 +23,14 @@ FlowCytometryTools is a python package written in `python 2.7 <https://www.pytho
 
     pip install flowcytometrytools
 
-(Note: Please do not use `sudo` when installing with pip. Instead figure out
-how to use virtual environments or get anaconda/canopy.)
+    The project provides a ``pyproject.toml`` build definition, so editable installs for
+    development are also supported:
+
+    .. code-block:: bash
+
+         pip install -e .
+
+(Note: Please do not use ``sudo`` when installing with pip. Instead figure out
+how to use virtual environments or conda.)
 
 That's it!
