@@ -43,7 +43,7 @@ def _assign_IDS_to_datafiles(datafiles, parser, measurement_class=None, **kwargs
         fparse = lambda x: parser(x, **kwargs)
     elif parser == "name":
         kwargs.setdefault("pre", "Well_")
-        kwargs.setdefault("post", ["_", "\.", "$"])
+        kwargs.setdefault("post", ["_", r"\.", "$"])
         kwargs.setdefault("tagtype", str)
         fparse = lambda x: get_tag_value(os.path.basename(x), **kwargs)
     elif parser == "number":
@@ -1027,7 +1027,7 @@ class OrderedCollection(MeasurementCollection):
         df = DF(noneval, index=self.row_labels, columns=self.col_labels, dtype=object)
         for k, res in d.items():
             i, j = self._positions[k]
-            df[j][i] = res
+            df.loc[i, j] = res
         try:
             df = df.astype(float)
         except:

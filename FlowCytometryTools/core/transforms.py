@@ -17,8 +17,23 @@ TODO:
 from __future__ import division
 
 import warnings
-from numpy import (log, log10, exp, where, sign, vectorize, min, max, linspace, logspace, r_, abs,
-                   asarray, )
+from numpy import (
+    log,
+    log10,
+    exp,
+    where,
+    sign,
+    vectorize,
+    min,
+    max,
+    linspace,
+    logspace,
+    r_,
+    abs,
+    asarray,
+    errstate,
+    maximum,
+)
 from numpy.lib.shape_base import apply_along_axis
 from scipy.interpolate import InterpolatedUnivariateSpline
 from scipy.optimize import brentq
@@ -76,7 +91,13 @@ def tlog(x, th=1, r=_display_max, d=_l_mmax):
     """
     if th <= 0:
         raise ValueError("Threshold value must be positive. %s given." % th)
-    return where(x <= th, log10(th) * 1.0 * r / d, log10(x) * 1.0 * r / d)
+
+    x_arr = asarray(x, dtype=float)
+    scale = 1.0 * r / d
+    threshold_value = log10(th) * scale
+    with errstate(divide="ignore", invalid="ignore"):
+        log_values = log10(maximum(x_arr, th)) * scale
+    return where(x_arr <= th, threshold_value, log_values)
 
 
 def tlog_inv(y, th=1, r=_display_max, d=_l_mmax):
@@ -120,8 +141,11 @@ def glog(x, l):
 
 
 def glog_inv(y, l):
-    ey = exp(y)
-    return (ey**2 - l) / (2 * ey)
+    y_arr = asarray(y, dtype=float)
+    with errstate(over="ignore", divide="ignore", invalid="ignore"):
+        ey = exp(y_arr)
+        result = (ey**2 - l) / (2 * ey)
+    return result
 
 
 def hlog_inv(y, b=500, r=_display_max, d=_l_mmax):
@@ -177,7 +201,10 @@ def _x_for_spln(x, nx, log_spacing):
         return logspace(log10(xmin), log10(xmax), nx)
     else:
         lxmax = max([log10(xmax), 0])
-        lxmin = max([log10(abs(xmin)), 0])
+        if xmin == 0:
+            lxmin = 0
+        else:
+            lxmin = max([log10(abs(xmin)), 0])
 
         # All the code below is for log-spacing, when xmin < 0 and xmax > 0
         if lxmax == 0 and lxmin == 0:

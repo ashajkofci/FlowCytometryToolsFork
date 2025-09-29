@@ -36,9 +36,9 @@ def get_tag_value(string, pre, post, tagtype=float, greedy=True):
     Example
     ------------
 
-    get_tag_value('PID_23.5.txt', pre=r'PID_' , post='(?=_|\.txt)') should return 23.5
-    get_tag_value('PID_23.5_.txt', pre=r'PID_', post='(?=_|\.txt)') should return 23.5
-    get_tag_value('PID_23_5_.txt', pre=r'PID_', post='(?=_|\.txt)') should return 23
+    get_tag_value('PID_23.5.txt', pre=r'PID_' , post=r'(?=_|\.txt)') should return 23.5
+    get_tag_value('PID_23.5_.txt', pre=r'PID_', post=r'(?=_|\.txt)') should return 23.5
+    get_tag_value('PID_23_5_.txt', pre=r'PID_', post=r'(?=_|\.txt)') should return 23
     get_tag_value('PID_23.txt', pre=r'PID_', post='.txt') should return 23
     get_tag_value('PID.txt', pre=r'PID_', post='.txt') should return None
     """
